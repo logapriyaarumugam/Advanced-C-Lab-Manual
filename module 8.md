@@ -15,8 +15,46 @@ Algorithm:
 4.	Exit the program.
  
 Program:
+```
+    printf("Enter a number: ");
+    scanf("%d", &n);
 
-//type your code here
+    switch(n)
+    {
+        case 1:
+            printf("one");
+            break;
+        case 2:
+            printf("two");
+            break;
+        case 3:
+            printf("three");
+            break;
+        case 4:
+            printf("four");
+            break;
+        case 5:
+            printf("five");
+            break;
+        case 6:
+            printf("six");
+            break;
+        case 7:
+            printf("seven");
+            break;
+        case 8:
+            printf("eight");
+            break;
+        case 9:
+            printf("nine");
+            break;
+        default:
+            printf("Greater than 9");
+    }
+
+    return 0;
+}
+```
 
 
 
@@ -24,7 +62,7 @@ Program:
 Output:
 
 
-//paste your output here
+<img width="861" height="342" alt="image" src="https://github.com/user-attachments/assets/9d68802c-77e7-48c3-b255-7107bf48f643" />
 
 
 
@@ -46,8 +84,28 @@ Algorithm:
 6.	End
  
 Program:
+```
+    printf("Enter the string: ");
+    scanf("%99s", a);
 
-//type your code here
+    for(i = 0; a[i] != '\0'; i++)
+    {
+        if(a[i] >= '0' && a[i] <= '9')
+        {
+            count[a[i] - '0']++;
+        }
+    }
+
+    printf("Frequency of digits 0 to 9:\n");
+
+    for(i = 0; i < 10; i++)
+    {
+        printf("%d ", count[i]);
+    }
+
+    return 0;
+}
+```
 
 
 
@@ -55,7 +113,8 @@ Program:
 Output:
 
 
-//paste your output here
+<img width="851" height="325" alt="image" src="https://github.com/user-attachments/assets/d3c5f5cf-dfac-42b1-befa-6b393c53b370" />
+
 
 
 
@@ -84,7 +143,63 @@ Free the memory allocated for each string in s Free the memory allocated for s
  
 Program:
 
-//type your code here
+```
+    i = n - 2;
+
+    while(i >= 0 && s[i] >= s[i + 1])
+        i--;
+
+    if(i < 0)
+        return 0;
+
+    j = n - 1;
+
+    while(s[j] <= s[i])
+        j--;
+
+    swap(&s[i], &s[j]);
+
+    reverse(s, i + 1, n - 1);
+
+    return 1;
+}
+
+int main()
+{
+    char s[100];
+    int n, i, j;
+    char temp;
+
+    printf("Enter a string: ");
+    scanf("%99s", s);
+
+    n = strlen(s);
+
+    /* Sort the string */
+    for(i = 0; i < n - 1; i++)
+    {
+        for(j = i + 1; j < n; j++)
+        {
+            if(s[i] > s[j])
+            {
+                temp = s[i];
+                s[i] = s[j];
+                s[j] = temp;
+            }
+        }
+    }
+
+    printf("Permutations in lexicographical order:\n");
+
+    do
+    {
+        printf("%s\n", s);
+    }
+    while(nextPermutation(s, n));
+
+    return 0;
+}
+```
 
 
 
@@ -92,7 +207,8 @@ Program:
 Output:
 
 
-//paste your output here
+<img width="858" height="498" alt="image" src="https://github.com/user-attachments/assets/55a1ab74-3e66-4615-9a46-ad7e2c26a90b" />
+
 
 
 
@@ -117,15 +233,45 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+    printf("Enter n: ");
+    scanf("%d", &n);
+
+    len = n * 2 - 1;
+
+    for(i = 0; i < len; i++)
+    {
+        for(j = 0; j < len; j++)
+        {
+            min = i;
+
+            if(j < min)
+                min = j;
+
+            if(len - 1 - i < min)
+                min = len - 1 - i;
+
+            if(len - 1 - j < min)
+                min = len - 1 - j;
+
+            printf("%d ", n - min);
+        }
+
+        printf("\n");
+    }
+
+    return 0;
+}
+```
 
 
 
 
 Output:
 
+<img width="852" height="465" alt="image" src="https://github.com/user-attachments/assets/91df913d-ed0d-4e91-84c3-8080b1b9659b" />
 
-//paste your output here
+
 
 
 
@@ -156,7 +302,26 @@ o	Call the square() function and display the result.
 
 Program:
 
-//type your code here
+```
+#include <stdio.h>
+
+int square() { int n;
+
+printf("Enter a number: ");
+scanf("%d", &n);
+
+return n * n;
+}
+
+int main() { int result;
+
+    result = square();
+
+    printf("Square = %d", result);
+
+    return 0;
+}
+```
 
 
 
@@ -164,7 +329,8 @@ Program:
 Output:
 
 
-//paste your output here
+<img width="847" height="451" alt="image" src="https://github.com/user-attachments/assets/5163c59a-1924-432e-8ccf-c7d5fd2ae365" />
+
 
 
 
